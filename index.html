@@ -3,192 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardona & Franco S.A.S. - Abogados</title>
-    
-    <!-- Importación de Fuentes Corporativas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =========================================
-           VARIABLES DE COLOR Y ESTILOS GLOBALES
-        ========================================= */
-        :root {
-            --azul-marino: #0B1D3A;   /* Azul oscuro corporativo principal */
-            --blanco-roto: #F4F6F8;   /* Fondo general y texto claro */
-            --gris-claro: #E0E4E8;    /* Detalles y hover */
-            --gris-oscuro: #2C3E50;   /* Texto principal */
-            --transicion: 0.3s ease-in-out;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--blanco-roto);
-            color: var(--gris-oscuro);
-        }
-
-        /* =========================================
-           HEADER MAESTRO
-        ========================================= */
-        .master-header {
-            background-color: var(--azul-marino);
-            width: 100%;
-            /* Propiedades para barra sólida y fija */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Sección Izquierda: Botón de formulario y Nombre */
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        /* Botón de Formulario (Ubicado a la izquierda) */
-        .btn-formulario {
-            background-color: transparent;
-            color: var(--blanco-roto);
-            border: 1.5px solid var(--gris-claro);
-            padding: 10px 22px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 2px;
-            transition: var(--transicion);
-            text-decoration: none;
-        }
-
-        .btn-formulario:hover {
-            background-color: var(--blanco-roto);
-            color: var(--azul-marino);
-        }
-
-        /* Nombre de la Empresa */
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--blanco-roto);
-            text-decoration: none;
-            letter-spacing: 1.5px;
-        }
-
-        /* =========================================
-           NAVEGACIÓN PRINCIPAL
-        ========================================= */
-        .nav-menu {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: var(--blanco-roto);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transicion);
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        /* Efecto Hover (Línea sutil debajo del texto) */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--gris-claro);
-            transition: var(--transicion);
-        }
-
-        .nav-link:hover {
-            color: var(--gris-claro);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* =========================================
-           RESPONSIVE DESIGN (Móviles y Tablets)
-        ========================================= */
-        @media (max-width: 1024px) {
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-                padding: 1.5rem;
-            }
-            .header-left {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .nav-menu {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-    </style>
+    <title>Cardona & Franco S.A.S. - Inicio</title>
+    <!-- Enlace a tu header.css anterior y el nuevo estilo de las páginas -->
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="estilos-paginas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- =======================================
-         INICIO HEADER MAESTRO
-    ======================================== -->
-    <header class="master-header">
-        <div class="header-container">
-            <!-- Izquierda: Botón Formulario y Logo -->
-            <div class="header-left">
-                <a href="#formulario-contacto" class="btn-formulario">Formulario</a>
-                <a href="index.html" class="logo-text">CARDONA & FRANCO S.A.S.</a>
-            </div>
-            
-            <!-- Derecha: Menú de Navegación -->
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
-                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- =======================================
-         FIN HEADER MAESTRO
-    ======================================== -->
+    <!-- Aquí iría el código de tu header.html con el <header class="master-header"> -->
 
-    <!-- Contenido de prueba para ver el efecto de la barra sólida al hacer scroll -->
-    <main style="height: 1500px; padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
-        <h1 style="color: var(--azul-marino); font-family: 'Playfair Display', serif;">Contenido de la página</h1>
-        <p style="margin-top: 1rem; line-height: 1.6;">Haz scroll hacia abajo para comprobar que el header se mantiene fijo, sólido y en la parte superior de la pantalla.</p>
-    </main>
+    <!-- SECCIÓN: INICIO Y QUIÉNES SOMOS -->
+    <section id="inicio" class="hero-section anim-fade-up">
+        <div class="container text-center">
+            <!-- Escudo Placeholder -->
+            <div class="escudo-img">
+                <img src="ruta-a-tu-escudo.png" alt="Escudo Cardona Franco" style="max-width: 150px; margin-bottom: 20px;">
+            </div>
+            <h1 class="titulo-principal">CARDONA FRANCO ABOGADOS S.A.S.</h1>
+            
+            <div class="quienes-somos-box delay-1">
+                <h2 class="subtitulo-seccion">Quiénes Somos</h2>
+                <p>Cardona Franco Abogados S.A.S. se consolida como una firma jurídica nacida en la ciudad de Manizales Caldas, para redefinir el estándar de la defensa legal mediante una visión institucional implacable; la cual, asume cada desafío corporativo y litigioso con una disciplina rigurosa que prioriza la emoción y los resultados de sus representados.</p>
+                <p>Igualmente, la estructura técnica de la firma se cimenta sobre una sólida trayectoria en el análisis procesal y el conocimiento profundo de la maquinaria judicial, por ende, los profesionales que la integran ostentan una perspectiva estratégica inigualable, fruto de una experiencia directa al interior de los altos Despachos de la Judicatura en Caldas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NOSOTROS -->
+    <section id="nosotros" class="seccion-clara anim-fade-up">
+        <div class="container text-center">
+            <h2 class="titulo-seccion">Nosotros</h2>
+            <p class="texto-destacado">Nuestro equipo de abogados fusiona la más alta excelencia académica con una inagotable vocación al servicio. En este sentido, la gestión de la firma gravita en torno a la atención personalizada y el estricto sigilo profesional, garantizando así un respaldo jurídico inmejorable.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: ÁREAS DE PRÁCTICA (Tarjetas) -->
+    <section id="servicios" class="seccion-oscura anim-fade-up">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="titulo-seccion text-blanco">ÁREAS DE PRÁCTICA</h2>
+                <p class="subtitulo-elegante text-blanco">La estrategia jurídica que transforma conflictos complejos en soluciones definitivas.</p>
+            </div>
+
+            <div class="grid-tarjetas">
+                <!-- Tarjeta 1 -->
+                <div class="tarjeta-servicio delay-1">
+                    <img src="ruta-imagen-corporativo.jpg" alt="Derecho Corporativo">
+                    <div class="tarjeta-contenido">
+                        <h3>Derecho Corporativo y de Negocios</h3>
+                        <p>La experiencia que transforma riesgos corporativos en oportunidades de crecimiento seguro.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="tarjeta-servicio delay-2">
+                    <img src="ruta-imagen-laboral.jpg" alt="Derecho Laboral">
+                    <div class="tarjeta-contenido">
+                        <h3>Derecho Laboral y Seguridad Social</h3>
+                        <p>Donde las empresas y los trabajadores encuentran equilibrio normativo y mitigación real de pasivos laborales.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="tarjeta-servicio delay-3">
+                    <img src="ruta-imagen-litigioso.jpg" alt="Derecho Litigioso">
+                    <div class="tarjeta-contenido">
+                        <h3>Derecho Litigioso y Resolución de Controversias</h3>
+                        <p>La estrategia procesal que convierte la disputa en resultados favorables.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 4 -->
+                <div class="tarjeta-servicio delay-4">
+                    <img src="ruta-imagen-capacidad.jpg" alt="Pérdida de Capacidad Laboral">
+                    <div class="tarjeta-contenido">
+                        <h3>Pérdida de Capacidad Laboral (Énfasis Técnico)</h3>
+                        <p>Alta especialización en el rigor normativo que rige la calificación de perdida de capacidad laboral y sus consecuencias en dictámenes y juntas médicas con rigor científico-jurídico.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 5 -->
+                <div class="tarjeta-servicio delay-5">
+                    <img src="ruta-imagen-familia.jpg" alt="Derecho de familia">
+                    <div class="tarjeta-contenido">
+                        <h3>Derecho de familia</h3>
+                        <p>Defendemos sus afectos, blindamos su legado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="texto-adicional-servicios text-center text-blanco">
+                <p>Ofrecemos una amplia y sofisticada gama de soluciones jurídicas, orientadas a satisfacer las exigencias contemporáneas en las diferentes ramas del derecho; a través de asesorías forjadas a la medida, redacción contractual minuciosa, representación judicial contundente y un acompañamiento administrativo ininterrumpido.</p>
+                <h3 class="titulo-secundario mt-2">MECANISMOS ALTERNATIVOS DE RESOLUCIÓN DE CONFLICTOS</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: POR QUÉ ELEGIRNOS -->
+    <section id="elegirnos" class="seccion-clara anim-fade-up">
+        <div class="container">
+            <h2 class="titulo-seccion text-center">POR QUÉ ELEGIRNOS</h2>
+            <ul class="lista-elegirnos">
+                <li><span class="bullet-icon"></span> Más de 8 años de trayectoria meritoria en litigio y asesoría estratégica.</li>
+                <li><span class="bullet-icon"></span> Extrema diligencia y vocación de servicio.</li>
+                <li><span class="bullet-icon"></span> Dominio técnico avanzado en la normativa que rige los dictámenes de pérdida de capacidad laboral y sus consecuencias.</li>
+                <li><span class="bullet-icon"></span> Aliados estratégicos en todo el Territorio Nacional.</li>
+                <li><span class="bullet-icon"></span> Atención directa, rigurosa y personalizada sin intermediarios.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CONTACTO Y POLÍTICA DE PRIVACIDAD -->
+    <section id="contacto" class="seccion-contacto anim-fade-up">
+        <div class="container grid-2-cols">
+            <!-- Formulario de Contacto -->
+            <div class="contacto-formulario">
+                <h2 class="titulo-seccion">Contacto</h2>
+                <form action="#" method="POST" class="form-moderno">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje o Consulta</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-formulario-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Política de Privacidad (Caja con scroll) -->
+            <div class="politica-privacidad-box">
+                <h2 class="titulo-seccion text-blanco">POLÍTICA DE PRIVACIDAD</h2>
+                <div class="scroll-box">
+                    <p>La Constitución Política de Colombia establece en su Artículo 15 el derecho de protección de datos personales como “[…] el derecho de toda persona para conocer, actualizar, rectificar y/o cancelar la información y datos personales que de ella se hayan recolectado y/o se traten en bases de datos públicas o privadas […]”.</p>
+                    <p>A su turno, la Ley 1581 del 17 de octubre de 2012 desarrolló este derecho al establecer las Disposiciones Generales para la Protección de Datos Personales en Colombia, reglamentado por los Decretos 1377 de 2013 y 886 de 2014...</p>
+                    <p>En ese orden de ideas, CARDONA Y FRANCO ABOGADOS CONSULTORES S.A.S. de ahora en adelante CARDONA Y FRANCO ABOGADOS, implementa esta Política de Tratamiento de Datos (PTD)...</p>
+                    <!-- Aquí puedes pegar el resto del texto largo de la política de privacidad -->
+                </div>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>

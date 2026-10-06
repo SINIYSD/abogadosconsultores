@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDONA FRANCO ABOGADOS S.A.S. | Excelencia Estratégica</title>
+    <meta name="description" content="Firma jurídica de excelencia en Manizales. Acompañamiento jurídico de alta complejidad, derecho laboral, corporativo, civil y administrativo.">
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Montserrat (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for architecture) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#002147',
+                        ivory: '#F8F9FA',
+                        gold: '#D4AF37',
+                        charcoal: '#333333',
+                        graylight: '#E5E7EB'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling and base resets */
+        html { scroll-behavior: smooth; }
+        body { background-color: #F8F9FA; color: #333333; overflow-x: hidden; }
+
+        /* SPA View Transitions */
+        .spa-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .spa-view.active {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.6s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Luxury accents and hover effects */
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #D4AF37;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .gold-underline:hover::after { width: 80px; }
+
+        .card-hover {
+            transition: all 0.4s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        /* Nav links underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
+
+        /* WhatsApp Blinking/Pulse Animation */
+        .wa-btn {
+            animation: pulse-gold 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .wa-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Mobile Menu */
+        #mobile-menu { display: none; }
+        #mobile-menu.open { display: flex; animation: slideDown 0.3s ease-out; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Architectural Parallax Backgrounds */
+        .bg-hero {
+            background-image: linear-gradient(to bottom, rgba(0,33,71,0.85), rgba(0,33,71,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #F8F9FA;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="bg-midnight text-ivory sticky top-0 z-50 shadow-lg border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Desktop Layout: Grid 3 cols (Links Left, Logo Center, Button Right) -->
+            <div class="hidden lg:grid grid-cols-3 items-center h-24">
+                <!-- Left: Navigation -->
+                <nav class="flex space-x-8 text-sm font-medium tracking-wider uppercase">
+                    <a href="#inicio" onclick="navigate('inicio')" class="nav-link active-link text-gray-300 hover:text-white transition-colors">Inicio</a>
+                    <a href="#servicios" onclick="navigate('servicios')" class="nav-link text-gray-300 hover:text-white transition-colors">Servicios</a>
+                    <a href="#nosotros" onclick="navigate('nosotros')" class="nav-link text-gray-300 hover:text-white transition-colors">Nosotros</a>
+                    <a href="#contacto" onclick="navigate('contacto')" class="nav-link text-gray-300 hover:text-white transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Center: Logo / Name -->
+                <div class="text-center flex flex-col items-center justify-center cursor-pointer" onclick="navigate('inicio')">
+                    <!-- Subtle abstract logo representation -->
+                    <i class="fa-solid fa-scale-balanced text-gold text-2xl mb-1"></i>
+                    <h1 class="font-serif text-xl xl:text-2xl font-bold tracking-widest text-white leading-tight">
+                        CARDONA FRANCO<br><span class="text-xs tracking-[0.2em] font-sans text-gold font-normal">ABOGADOS S.A.S.</span>
+                    </h1>
+                </div>
+
+                <!-- Right: Contact Button -->
+                <div class="flex justify-end">
+                    <a href="#contacto" onclick="navigate('contacto')" class="bg-transparent border border-gold text-gold hover:bg-gold hover:text-midnight font-semibold py-2 px-6 rounded transition-all duration-300 text-sm uppercase tracking-wide">
+                        Agendar Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="flex lg:hidden justify-between items-center h-20">
+                <div class="flex flex-col items-start cursor-pointer" onclick="navigate('inicio')">
+                    <h1 class="font-serif text-lg font-bold tracking-widest text-white leading-tight">
+                        CARDONA FRANCO
+                    </h1>
+                    <span class="text-[10px] tracking-widest font-sans text-gold font-normal">ABOGADOS S.A.S.</span>
+                </div>
+                <button id="mobile-menu-btn" class="text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden flex-col bg-midnight border-t border-gold/20 absolute w-full left-0 shadow-xl">
+            <a href="#inicio" onclick="navigate('inicio'); toggleMenu()" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Inicio</a>
+            <a href="#servicios" onclick="navigate('servicios'); toggleMenu()" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Servicios</a>
+            <a href="#nosotros" onclick="navigate('nosotros'); toggleMenu()" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Nosotros</a>
+            <a href="#contacto" onclick="navigate('contacto'); toggleMenu()" class="block py-4 px-6 text-sm font-medium text-white uppercase tracking-wide">Contacto</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- ================= VIEW: INICIO ================= -->
+        <section id="inicio" class="spa-view active">
+            
+            <!-- Hero Section -->
+            <div class="bg-hero min-h-[80vh] flex items-center relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/90 to-transparent"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
+                    <div class="max-w-3xl">
+                        <span class="text-gold font-semibold tracking-widest uppercase text-sm mb-4 block">Firma Jurídica de Excelencia</span>
+                        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight mb-8">
+                            CARDONA FRANCO ABOGADOS S.A.S.
+                        </h2>
+                        <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 border-l-4 border-gold pl-6">
+                            "Concebimos el ejercicio del derecho como una disciplina de absoluta precisión y excelencia estratégica. De ahí que, nuestra firma se erige sobre un rigor académico excepcional, brindando acompañamiento jurídico de alta complejidad para la protección patrimonial y empresarial en todo el territorio nacional. En donde, nuestro inquebrantable compromiso es ofrecer a cada cliente una representación legal caracterizada por la exclusividad, la ética probada y la consecución de resultados jurídicos contundentes."
+                        </p>
+                        <a href="#servicios" onclick="navigate('servicios')" class="inline-block bg-gold text-midnight font-bold py-3 px-8 rounded hover:bg-white transition-colors duration-300 uppercase tracking-wider text-sm shadow-lg">
+                            Descubrir Áreas de Práctica
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiénes Somos (Brief) -->
+            <div class="py-20 bg-ivory">
+                <div class="max-w-4xl mx-auto px-4 text-center">
+                    <h3 class="font-serif text-3xl md:text-4xl text-midnight font-bold mb-6 gold-underline">Quiénes Somos</h3>
+                    <p class="text-gray-600 mt-8 text-lg leading-relaxed font-light">
+                        Cardona Franco Abogados S.A.S. se consolida como una firma jurídica nacida en la ciudad de Manizales Caldas, para redefinir el estándar de la defensa legal mediante una visión institucional implacable; la cual, asume cada desafío corporativo y litigioso con una disciplina rigurosa que prioriza la emoción y los resultados de sus representados.
+                        Igualmente, la estructura técnica de la firma se cimenta sobre una sólida trayectoria en el análisis procesal y el conocimiento profundo de la maquinaria judicial.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Áreas de Práctica -->
+            <div class="py-24 bg-white bg-pattern">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h3 class="font-serif text-3xl md:text-4xl text-midnight font-bold mb-4 gold-underline">Áreas de Práctica</h3>
+                        <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light">La estrategia jurídica que transforma conflictos complejos en soluciones definitivas.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
+                            <div class="w-12 h-12 bg-midnight rounded-full flex items-center justify-center text-gold mb-6">
+                                <i class="fa-solid fa-building text-xl"></i>
+                            </div>
+                            <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho Corporativo y de Negocios</h4>
+                            <p class="text-gray-600 font-light text-sm flex-grow">La experiencia que transforma riesgos corporativos en oportunidades de crecimiento seguro.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
+                            <div class="w-12 h-12 bg-midnight rounded-full flex items-center justify-center text-gold mb-6">
+                                <i class="fa-solid fa-helmet-safety text-xl"></i>
+                            </div>
+                            <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho Laboral y Seguridad Social</h4>
+                            <p class="text-gray-600 font-light text-sm flex-grow">Donde las empresas y los trabajadores encuentran equilibrio normativo y mitigación real de pasivos laborales.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
+                            <div class="w-12 h-12 bg-midnight rounded-full flex items-center justify-center text-gold mb-6">
+                                <i class="fa-solid fa-gavel text-xl"></i>
+                            </div>
+                            <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho Litigioso y Controversias</h4>
+                            <p class="text-gray-600 font-light text-sm flex-grow">La estrategia procesal que convierte la disputa en resultados favorables.</p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
+                            <div class="w-12 h-12 bg-midnight rounded-full flex items-center justify-center text-gold mb-6">
+                                <i class="fa-solid fa-user-injured text-xl"></i>
+                            </div>
+                            <h4 class="font-serif text-xl font-bold text-midnight mb-4">Pérdida de Capacidad Laboral</h4>
+                            <p class="text-gray-600 font-light text-sm flex-grow">Alta especialización en el rigor normativo que rige la calificación y sus consecuencias médicas.</p>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start lg:col-start-2">
+                            <div class="w-12 h-12 bg-midnight rounded-full flex items-center justify-center text-gold mb-6">
+                                <i class="fa-solid fa-hands-holding-child text-xl"></i>
+                            </div>
+                            <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho de Familia</h4>
+                            <p class="text-gray-600 font-light text-sm flex-grow">Defendemos sus afectos, blindamos su legado con total discreción y profesionalismo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Por qué elegirnos -->
+            <div class="py-20 bg-midnight text-ivory">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="font-serif text-3xl md:text-4xl font-bold mb-8">Por qué elegirnos</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-4"></i>
+                                <span class="font-light text-gray-300">Más de 8 años de trayectoria meritoria en litigio y asesoría estratégica.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-4"></i>
+                                <span class="font-light text-gray-300">Extrema diligencia y vocación de servicio.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-4"></i>
+                                <span class="font-light text-gray-300">Dominio técnico avanzado en la normativa que rige los dictámenes de pérdida de capacidad laboral.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-4"></i>
+                                <span class="font-light text-gray-300">Aliados estratégicos en todo el Territorio Nacional.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-gold mt-1 mr-4"></i>
+                                <span class="font-light text-gray-300">Atención directa, rigurosa y personalizada sin intermediarios.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden md:block h-full w-full rounded-lg overflow-hidden shadow-2xl border border-white/10 relative group">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Detalle Arquitectónico" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-midnight/30"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: SERVICIOS ================= -->
+        <section id="servicios" class="spa-view bg-ivory">
+            <div class="bg-midnight py-20 text-center border-b border-gold/20">
+                <div class="max-w-4xl mx-auto px-4">
+                    <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mb-6">Nuestro Portafolio de Servicios</h2>
+                    <p class="text-gold font-light text-lg">Precisión, Estrategia y Resultados</p>
+                </div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="mb-16 text-center max-w-3xl mx-auto">
+                    <p class="text-gray-600 text-lg font-light leading-relaxed">
+                        Ofrecemos una amplia y sofisticada gama de soluciones jurídicas, orientadas a satisfacer las exigencias contemporáneas en las diferentes ramas del derecho; a través de asesorías forjadas a la medida, redacción contractual minuciosa, representación judicial contundente y un acompañamiento administrativo ininterrumpido.
+                    </p>
+                </div>
+
+                <!-- Services Grid (Detailed) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    
+                    <!-- Categoria 1 -->
+                    <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-briefcase text-gold mr-3"></i> Derecho Laboral
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li>Asesoría en contratación, jornadas, salarios y terminación.</li>
+                            <li>Redacción de contratos y reglamento interno.</li>
+                            <li>Procesos disciplinarios y derecho laboral colectivo.</li>
+                            <li>Trámites para estabilidad laboral reforzada.</li>
+                            <li>Procesos ordinarios y ejecutivos laborales (Contrato realidad, despidos, culpa patronal).</li>
+                            <li>Asesoría Externa: Conceptos legales, cálculo de indemnizaciones y representación judicial.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 2 -->
+                    <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-city text-gold mr-3"></i> Derecho Laboral de la Empresa
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li>Auditoría empresarial integral.</li>
+                            <li>Afiliaciones y liquidación de aportes al SGSSI.</li>
+                            <li>Implementación del Sistema de Gestión de SST.</li>
+                            <li>Liquidación de salarios, prestaciones y novedades.</li>
+                            <li>Gestión de reglamentos, comités, fueros y despidos.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 3 -->
+                    <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-shield-heart text-gold mr-3"></i> Seguridad Social y Pensiones
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li>Asesoría en salud, pensión y riesgos laborales.</li>
+                            <li>Representación Judicial ante entidades del SGSSI.</li>
+                            <li>Solicitudes pensionales (vejez, invalidez, sobrevivientes).</li>
+                            <li>Trámites ante juntas de calificación de invalidez.</li>
+                            <li>Cálculo actuarial y procesos de reconocimiento pensional.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 4 -->
+                    <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-handshake text-gold mr-3"></i> Derecho Civil y Comercial
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li>Insolvencia de persona natural no comerciante y societario.</li>
+                            <li>Formalización de empresa y redacción de contratos mercantiles.</li>
+                            <li>Procesos civiles: ejecutivos, resolución contractual, responsabilidad civil.</li>
+                            <li>Procesos de pertenencia, servidumbres y reivindicatorios.</li>
+                            <li>Protección al consumidor y reclamación de seguros.</li>
+                        </ul>
+                    </div>
+
+                     <!-- Categoria 5 -->
+                     <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-house-chimney-window text-gold mr-3"></i> Inmobiliario y Familia
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li><strong>Inmobiliario:</strong> Compraventa, arriendo, estudio de títulos, propiedad horizontal.</li>
+                            <li><strong>Familia:</strong> Divorcios, adopciones, investigación de paternidad, alimentos, sucesiones.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 6 -->
+                    <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                        <h4 class="font-serif text-2xl text-midnight font-bold border-b border-gold/30 pb-3 mb-5 flex items-center">
+                            <i class="fa-solid fa-landmark text-gold mr-3"></i> Administrativo y Disciplinario
+                        </h4>
+                        <ul class="text-gray-600 font-light text-sm space-y-2 list-disc pl-5">
+                            <li>Acciones de tutela, populares y de grupo.</li>
+                            <li>Contratación estatal y controversias contractuales.</li>
+                            <li>Procesos de nulidad, restablecimiento del derecho y reparación directa.</li>
+                            <li>Defensa en procesos disciplinarios ante Procuraduría y Contraloría.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mecanismos Alternativos -->
+                <div class="mt-20 bg-midnight text-white p-10 md:p-14 rounded-lg shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 opacity-10">
+                        <i class="fa-solid fa-scale-balanced text-[15rem]"></i>
+                    </div>
+                    <div class="relative z-10 max-w-4xl">
+                        <h4 class="font-serif text-3xl font-bold mb-4 text-gold">Mecanismos Alternativos de Resolución de Conflictos</h4>
+                        <p class="font-light text-gray-300 leading-relaxed text-lg">
+                            En nuestra firma, y en todas las áreas del derecho, siempre preferimos adoptar un enfoque preventivo, buscando agotar todas las opciones que lleven a un acuerdo favorable, que prevenga conflictos legales innecesarios, mediante la conciliación, mediación, transacción y amigable composición.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: NOSOTROS ================= -->
+        <section id="nosotros" class="spa-view bg-ivory">
+            <div class="bg-hero min-h-[40vh] flex items-center relative bg-center" style="background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1920&q=80');">
+                <div class="absolute inset-0 bg-midnight/90"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full py-20">
+                    <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mb-6">Nuestra Firma</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto"></div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl mx-auto text-center mb-20">
+                    <p class="text-xl text-gray-700 font-serif italic mb-6">
+                        "Nuestro equipo de abogados fusiona la más alta excelencia académica con una inagotable vocación al servicio."
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Somos una firma jurídica de excelencia, radicada en el corazón de la Ciudad de Manizales y con alcance de representación en todo el territorio nacional. Nuestro propósito fundamental radica en brindar asesoría, consultoría y representación legal estructurada bajo los más altos estándares académicos, técnicos y éticos.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed mt-4">
+                        Nuestra práctica profesional se fundamenta en el dominio dogmático y argumentativo del derecho colombiano, garantizando que la defensa de los intereses de nuestros clientes se estructure sin asomo de ambigüedad.
+                    </p>
+                </div>
+
+                <!-- Perfiles de Socios -->
+                <div class="grid md:grid-cols-2 gap-16">
+                    
+                    <!-- Socio 1 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-w-3 aspect-h-4 w-full rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-200">
+                            <!-- Placeholder premium -->
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="John Eduar Cardona Espinosa" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-midnight">JOHN EDUAR CARDONA ESPINOSA</h3>
+                        <p class="text-gold uppercase tracking-widest text-xs font-semibold mb-4 mt-2">Socio Fundador</p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-4 text-justify">
+                            Egresado de la Universidad de Manizales en el año 2017 y director de la firma Cardona Franco Abogados S.A.S., ostenta la calidad de conciliador en derecho, cualidad que garantiza una perspectiva integral, estratégica y compositiva para la resolución de conflictos. Así mismo, ha fungido como auxiliar judicial para el Consejo Seccional de la Judicatura de Caldas, lo que le ha dotado de un entendimiento profundo de la administración de justicia.
+                        </p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Cuenta con más de ocho años de experiencia meritoria en el litigio en derecho laboral, seguridad social, contencioso administrativo, civil y comercial. Su ejercicio jurídico está guiado por una profunda vocación de servicio.
+                        </p>
+                    </div>
+
+                    <!-- Socia 2 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-w-3 aspect-h-4 w-full rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-200">
+                            <!-- Placeholder premium -->
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Estefanía Franco Muñoz" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-midnight">ESTEFANÍA FRANCO MUÑOZ</h3>
+                        <p class="text-gold uppercase tracking-widest text-xs font-semibold mb-4 mt-2">Socia Fundadora</p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-4 text-justify">
+                            Abogada egresada de la Universidad de Manizales en el año 2020 y socia fundadora de la firma Cardona & Franco Abogados Consultores S.A.S. Su ejercicio profesional se ha consolidado en el litigio estratégico y la representación judicial en áreas de especial sensibilidad jurídica y humana, principalmente en seguridad social en pensiones, derecho laboral, derecho de familia y derecho administrativo.
+                        </p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Se distingue por su capacidad de análisis, resolución y gestión integral de casos. Asume cada caso con absoluta seriedad, cercanía y sentido humano, brindando una representación integral, transparente y eficaz.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VIEW: CONTACTO ================= -->
+        <section id="contacto" class="spa-view bg-ivory">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-4xl md:text-5xl text-midnight font-bold mb-4 gold-underline">Contacto</h2>
+                    <p class="text-gray-500 mt-6 font-light">Estamos a su disposición para brindarle el respaldo jurídico que merece.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    
+                    <!-- Contact Info -->
+                    <div class="bg-midnight text-ivory p-10 md:p-14 rounded-lg shadow-2xl relative overflow-hidden h-full">
+                        <div class="absolute -bottom-10 -right-10 opacity-10">
+                            <i class="fa-regular fa-compass text-[15rem]"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl font-bold mb-8 text-gold">Visítenos</h3>
+                        
+                        <div class="space-y-8 relative z-10">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold mr-6 flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold tracking-wider text-sm mb-1 uppercase">Sede Principal</h5>
+                                    <p class="font-light text-gray-300">Calle 20 A número 21-30<br>Edificio Pasaje Pinzón, Oficina 601<br>Manizales, Caldas, Colombia.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold mr-6 flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold tracking-wider text-sm mb-1 uppercase">Atención Telefónica</h5>
+                                    <p class="font-light text-gray-300">
+                                        +57 319 747 2358<br>
+                                        +57 322 243 8756
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-white p-10 md:p-14 rounded-lg shadow-lg border border-gray-100">
+                        <h3 class="font-serif text-2xl font-bold mb-8 text-midnight">Envíenos su consulta</h3>
+                        <form onsubmit="event.preventDefault(); showSuccessMsg();" class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2" for="name">Nombre Completo</label>
+                                <input class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-gold transition-colors text-charcoal font-light" type="text" id="name" required>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2" for="email">Correo Electrónico</label>
+                                    <input class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-gold transition-colors text-charcoal font-light" type="email" id="email" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2" for="phone">Teléfono</label>
+                                    <input class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-gold transition-colors text-charcoal font-light" type="tel" id="phone">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2" for="message">Mensaje / Requerimiento</label>
+                                <textarea class="w-full border-b-2 border-gray-200 bg-transparent py-2 focus:outline-none focus:border-gold transition-colors text-charcoal font-light resize-none h-24" id="message" required></textarea>
+                            </div>
+                            <div class="pt-4">
+                                <button type="submit" class="w-full bg-midnight text-ivory font-bold py-4 rounded hover:bg-gold hover:text-midnight transition-colors duration-300 uppercase tracking-widest text-sm">
+                                    Solicitar Asesoría
+                                </button>
+                                <p id="form-success" class="text-green-600 text-sm mt-4 hidden text-center font-medium">¡Su mensaje ha sido enviado con éxito! Nos pondremos en contacto pronto.</p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+        <!-- WA Button 1 -->
+        <a href="https://api.whatsapp.com/send?phone=+573197472358&text=Hola,%20Vengo%20de%20www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- WA Button 2 -->
+        <a href="https://api.whatsapp.com/send?phone=+573222438756&text=Hola%2C+vengo+de+www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer class="bg-midnight border-t border-gold/20 text-gray-400 py-10 text-sm text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <i class="fa-solid fa-scale-balanced text-gold text-2xl mb-4 opacity-50"></i>
+            <p class="mb-2">© 2026 CARDONA FRANCO ABOGADOS S.A.S. Todos los derechos reservados.</p>
+            <p class="text-xs opacity-70">
+                <a href="politica-privacidad.html" target="_blank" class="hover:text-gold transition-colors">Política de Tratamiento de Datos</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // SPA Routing Logic
+        function navigate(pageId) {
+            // Hide all views
+            document.querySelectorAll('.spa-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            // Show target view
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update active state on desktop nav
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active-link', 'text-white');
+                link.classList.add('text-gray-300');
+            });
+            
+            // Find and activate the correct link based on onclick attribute
+            const activeLinks = document.querySelectorAll(`a[onclick="navigate('${pageId}')"]`);
+            activeLinks.forEach(link => {
+                if(link.classList.contains('nav-link')) {
+                    link.classList.add('active-link', 'text-white');
+                    link.classList.remove('text-gray-300');
+                }
+            });
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Mock Form Submission
+        function showSuccessMsg() {
+            const msg = document.getElementById('form-success');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+                document.querySelector('form').reset();
+            }, 5000);
+        }
+
+        // Initialize view based on hash if present
+        window.addEventListener('DOMContentLoaded', () => {
+            let hash = window.location.hash.substring(1);
+            if (hash && ['inicio', 'servicios', 'nosotros', 'contacto'].includes(hash)) {
+                navigate(hash);
+            }
+        });
+    </script>
+</body>
+</html>

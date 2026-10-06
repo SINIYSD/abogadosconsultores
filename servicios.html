@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Cardona Franco Abogados S.A.S.</title>
+    <style>
+        :root {
+            --navy-blue: #0a192f;
+            --off-white: #f8f9fa;
+            --gray-dark: #495057;
+            --gray-light: #e9ecef;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--off-white);
+            color: var(--gray-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { color: var(--navy-blue); }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* Grid de Tarjetas UI/UX para servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background-color: #ffffff;
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        /* Reducción de imágenes como fue solicitado[cite: 1] */
+        .service-card img {
+            width: 100%;
+            max-height: 150px; 
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+        .service-card p { font-size: 0.95rem; color: var(--gray-dark); }
+        .info-box {
+            margin-top: 50px; 
+            background: #ffffff; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border-top: 4px solid var(--navy-blue);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- INVOCAR HEADER -->
+    <?php include 'header.php'; ?>
+    
+    <main class="container">
+        <h1 style="text-align: center;">ÁREAS DE PRÁCTICA</h1>
+        <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: var(--navy-blue);">
+            La estrategia jurídica que transforma conflictos complejos en soluciones definitivas.[cite: 1]
+        </p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="img-corporativo.jpg" alt="Derecho Corporativo">
+                <h3>Derecho Corporativo y de Negocios</h3>
+                <p>La experiencia que transforma riesgos corporativos en oportunidades de crecimiento seguro.[cite: 1]</p>
+            </div>
+            <div class="service-card">
+                <img src="img-laboral.jpg" alt="Derecho Laboral">
+                <h3>Derecho Laboral y Seguridad Social</h3>
+                <p>Donde las empresas y los trabajadores encuentran equilibrio normativo y mitigación real de pasivos laborales.[cite: 1]</p>
+            </div>
+            <div class="service-card">
+                <img src="img-litigioso.jpg" alt="Derecho Litigioso">
+                <h3>Derecho Litigioso y Resolución de Controversias</h3>
+                <p>La estrategia procesal que convierte la disputa en resultados favorables.[cite: 1]</p>
+            </div>
+            <div class="service-card">
+                <img src="img-capacidad.jpg" alt="Pérdida de Capacidad Laboral">
+                <h3>Pérdida de Capacidad Laboral (Énfasis Técnico)</h3>
+                <p>Alta especialización en el rigor normativo que rige la calificación de perdida de capacidad laboral y sus consecuencias en dictámenes y juntas médicas con rigor científico-jurídico.[cite: 1]</p>
+            </div>
+            <div class="service-card">
+                <img src="img-familia.jpg" alt="Derecho de familia">
+                <h3>Derecho de familia</h3>
+                <p>Defendemos sus afectos, blindamos su legado.[cite: 1]</p>
+            </div>
+        </div>
+
+        <section class="info-box">
+            <p>Ofrecemos una amplia y sofisticada gama de soluciones jurídicas, orientadas a satisfacer las exigencias contemporáneas en las diferentes ramas del derecho; a través de asesorías forjadas a la medida, redacción contractual minuciosa, representación judicial contundente y un acompañamiento administrativo ininterrumpido.[cite: 1]</p>
+            
+            <h3 style="margin-top: 20px;">MECANISMOS ALTERNATIVOS DE RESOLUCIÓN DE CONFLICTOS</h3>
+            <p>En nuestra firma, y en todas las áreas del derecho, siempre preferimos adoptar un enfoque preventivo, buscando agotar todas las opciones que lleven a un acuerdo favorable, que prevenga conflictos legales innecesarios, mediante la conciliación, mediación, transacción y amigable composición.[cite: 2]</p>
+        </section>
+    </main>
+
+    <!-- INVOCAR FOOTER -->
+    <?php include 'footer.php'; ?>
+</body>
+</html>

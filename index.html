@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardona & Franco S.A.S. - Abogados</title>
+    
+    <!-- Importación de Fuentes Corporativas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           VARIABLES DE COLOR Y ESTILOS GLOBALES
+        ========================================= */
+        :root {
+            --azul-marino: #0B1D3A;   /* Azul oscuro corporativo principal */
+            --blanco-roto: #F4F6F8;   /* Fondo general y texto claro */
+            --gris-claro: #E0E4E8;    /* Detalles y hover */
+            --gris-oscuro: #2C3E50;   /* Texto principal */
+            --transicion: 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--blanco-roto);
+            color: var(--gris-oscuro);
+        }
+
+        /* =========================================
+           HEADER MAESTRO
+        ========================================= */
+        .master-header {
+            background-color: var(--azul-marino);
+            width: 100%;
+            /* Propiedades para barra sólida y fija */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Sección Izquierda: Botón de formulario y Nombre */
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Botón de Formulario (Ubicado a la izquierda) */
+        .btn-formulario {
+            background-color: transparent;
+            color: var(--blanco-roto);
+            border: 1.5px solid var(--gris-claro);
+            padding: 10px 22px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: var(--transicion);
+            text-decoration: none;
+        }
+
+        .btn-formulario:hover {
+            background-color: var(--blanco-roto);
+            color: var(--azul-marino);
+        }
+
+        /* Nombre de la Empresa */
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--blanco-roto);
+            text-decoration: none;
+            letter-spacing: 1.5px;
+        }
+
+        /* =========================================
+           NAVEGACIÓN PRINCIPAL
+        ========================================= */
+        .nav-menu {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--blanco-roto);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transicion);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        /* Efecto Hover (Línea sutil debajo del texto) */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gris-claro);
+            transition: var(--transicion);
+        }
+
+        .nav-link:hover {
+            color: var(--gris-claro);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (Móviles y Tablets)
+        ========================================= */
+        @media (max-width: 1024px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 1.5rem;
+            }
+            .header-left {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .nav-menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =======================================
+         INICIO HEADER MAESTRO
+    ======================================== -->
+    <header class="master-header">
+        <div class="header-container">
+            <!-- Izquierda: Botón Formulario y Logo -->
+            <div class="header-left">
+                <a href="#formulario-contacto" class="btn-formulario">Formulario</a>
+                <a href="index.html" class="logo-text">CARDONA & FRANCO S.A.S.</a>
+            </div>
+            
+            <!-- Derecha: Menú de Navegación -->
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- =======================================
+         FIN HEADER MAESTRO
+    ======================================== -->
+
+    <!-- Contenido de prueba para ver el efecto de la barra sólida al hacer scroll -->
+    <main style="height: 1500px; padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <h1 style="color: var(--azul-marino); font-family: 'Playfair Display', serif;">Contenido de la página</h1>
+        <p style="margin-top: 1rem; line-height: 1.6;">Haz scroll hacia abajo para comprobar que el header se mantiene fijo, sólido y en la parte superior de la pantalla.</p>
+    </main>
+
+</body>
+</html>

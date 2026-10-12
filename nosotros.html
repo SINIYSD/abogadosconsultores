@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDONA FRANCO ABOGADOS S.A.S. | Excelencia Estratégica</title>
+    <meta name="description" content="Firma jurídica de excelencia en Manizales. Acompañamiento jurídico de alta complejidad, derecho laboral, corporativo, civil y administrativo.">
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Montserrat (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Recursos/favicon">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for architecture) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#002147',
+                        ivory: '#F8F9FA',
+                        gold: '#D4AF37',
+                        charcoal: '#333333',
+                        graylight: '#E5E7EB'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling and base resets */
+        html { scroll-behavior: smooth; }
+        body { background-color: #F8F9FA; color: #333333; overflow-x: hidden; }
+
+
+
+        /* Luxury accents and hover effects */
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #D4AF37;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .gold-underline:hover::after { width: 80px; }
+
+        .card-hover {
+            transition: all 0.4s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        /* Nav links underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
+
+        /* WhatsApp Blinking/Pulse Animation */
+        .wa-btn {
+            animation: pulse-gold 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .wa-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+
+
+        /* Architectural Parallax Backgrounds */
+        .bg-hero {
+            background-image: linear-gradient(to bottom, rgba(0,33,71,0.85), rgba(0,33,71,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #F8F9FA;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="bg-midnight text-ivory sticky top-0 z-50 shadow-lg border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Desktop Layout: Grid 3 cols (Links Left, Logo Center, Button Right) -->
+            <div class="hidden lg:grid grid-cols-3 items-center h-24">
+                <!-- Left: Navigation -->
+                <nav class="flex space-x-8 text-sm font-medium tracking-wider uppercase">
+                    <a href="https://cardonafrancoabogados.com" class="nav-link text-gray-300 hover:text-white transition-colors">Inicio</a>
+                    <a href="https://cardonafrancoabogados.com/servicios" class="nav-link text-gray-300 hover:text-white transition-colors">Servicios</a>
+                    <a href="https://cardonafrancoabogados.com/nosotros" class="nav-link active-link text-white hover:text-white transition-colors">Nosotros</a>
+                    <a href="https://cardonafrancoabogados.com/contacto" class="nav-link text-gray-300 hover:text-white transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Center: Logo / Name -->
+                <a href="https://cardonafrancoabogados.com" class="text-center flex flex-col items-center justify-center cursor-pointer">
+                    <!-- Subtle abstract logo representation -->
+                    
+                    <h1 class="font-serif text-xl xl:text-2xl font-bold tracking-widest text-white leading-tight">
+                        CARDONA & FRANCO<br><span class="text-xs tracking-[0.2em] font-sans text-gold font-normal">ABOGADOS CONSULTORES S.A.S.</span>
+                    </h1>
+                </a>
+
+                <!-- Right: Contact Button -->
+                <div class="flex justify-end">
+                    <a href="https://cardonafrancoabogados.com/contacto"  class="bg-transparent border border-gold text-gold hover:bg-gold hover:text-midnight font-semibold py-2 px-6 rounded transition-all duration-300 text-sm uppercase tracking-wide">
+                        Agendar Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="flex lg:hidden justify-between items-center h-20">
+                <a href="https://cardonafrancoabogados.com" class="flex flex-col items-start cursor-pointer">
+                    <h1 class="font-serif text-lg font-bold tracking-widest text-white leading-tight">
+                        CARDONA & FRANCO
+                    </h1>
+                    <span class="text-[10px] tracking-widest font-sans text-gold font-normal">ABOGADOS CONSULTORES S.A.S.</span>
+                </a>
+                <button id="mobile-menu-btn" class="text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden flex-col bg-midnight border-t border-gold/20 absolute w-full left-0 shadow-xl">
+            <a href="https://cardonafrancoabogados.com" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Inicio</a>
+            <a href="https://cardonafrancoabogados.com/servicios" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Servicios</a>
+            <a href="https://cardonafrancoabogados.com/nosotros" class="block py-4 px-6 text-sm font-medium text-gold border-b border-white/5 uppercase tracking-wide">Nosotros</a>
+            <a href="https://cardonafrancoabogados.com/contacto" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Contacto</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+<section id="nosotros" class="bg-ivory">
+            <div class="bg-midnight min-h-[40vh] flex items-center relative bg-center" >
+                <div class="absolute inset-0 bg-midnight/90"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center w-full py-20">
+                    <h2 class="font-serif text-4xl md:text-5xl text-white font-bold mb-6">Nuestra Firma</h2>
+                    <div class="w-20 h-1 bg-gold mx-auto"></div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl mx-auto text-center mb-20">
+                    <div class="text-justify mb-10">
+                        <h3 class="font-serif text-3xl font-bold text-midnight mb-6 text-center">MISIÓN</h3>
+                        <p class="text-gray-600 font-light leading-relaxed mb-4">
+                            <strong>CARDONA & FRANCO ABOGADOS S.A.S;</strong> como una firma dedicada a la representación técnica exhaustiva y la resolución de controversias mediante una inquebrantable concepción humanística. La defensa de los derechos exige un respeto absoluto por la vida, la justicia material y la dignidad del ser humano. Comprendemos el ordenamiento jurídico como un ente orgánico; por ello, promovemos la tolerancia y el diálogo directo como los componentes idóneos para materializar soluciones tangibles a través de los mecanismos alternativos a la solución de conflictos. Acogemos a personas, familias y corporaciones con la firme convicción de que la diversidad representa nuestra mayor riqueza.
+                        </p>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            De igual modo, estructuramos cada estrategia procesal reconociendo las realidades materiales de quienes acuden a nuestros despachos. El litigio estratégico exige agudeza; por ende, blindamos la confianza que los usuarios depositan en nuestra trayectoria mediante un ejercicio ético incuestionable, libre de enigmas.
+                        </p>
+                    </div>
+                    <p class="text-xl text-gray-700 font-serif italic mb-6 text-center">
+                        "Nuestro equipo de abogados fusiona el rigor del análisis jurídico con una inagotable vocación de servicio."
+                    </p>
+                </div>
+
+                <!-- Perfiles de Socios -->
+                <div class="grid md:grid-cols-2 gap-16">
+                    
+                    <!-- Socio 1 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-w-3 aspect-h-4 w-full rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-200">
+                            <!-- Placeholder premium -->
+                            <img src="/Recursos/JHON.png" alt="John Eduar Cardona Espinosa" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-midnight">JOHN EDUAR CARDONA ESPINOSA</h3>
+                        <p class="text-gold uppercase tracking-widest text-xs font-semibold mb-4 mt-2">Socio Fundador</p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-4 text-justify">
+                            Egresado de la Universidad de Manizales en el año 2017 y director de la firma Cardona Franco Abogados S.A.S., ostenta la calidad de conciliador en derecho, cualidad que garantiza una perspectiva integral, estratégica y compositiva para la resolución de conflictos. Así mismo, ha fungido como auxiliar judicial para el Consejo Seccional de la Judicatura de Caldas, lo que le ha dotado de un entendimiento profundo de la administración de justicia.
+                        </p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Cuenta con más de ocho años de experiencia meritoria en el litigio en derecho laboral, seguridad social, contencioso administrativo, civil y comercial. Su ejercicio jurídico está guiado por una profunda vocación de servicio.
+                        </p>
+                    </div>
+
+                    <!-- Socia 2 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-w-3 aspect-h-4 w-full rounded-lg overflow-hidden shadow-lg mb-8 bg-gray-200">
+                            <!-- Placeholder premium -->
+                            <img src="/Recursos/ESTEFANIA.png" alt="Estefanía" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-midnight">ESTEFANÍA FRANCO MUÑOZ</h3>
+                        <p class="text-gold uppercase tracking-widest text-xs font-semibold mb-4 mt-2">Socia Fundadora</p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed mb-4 text-justify">
+                            Abogada egresada de la Universidad de Manizales en el año 2020 y socia fundadora de la firma Cardona & Franco Abogados Consultores S.A.S. Su ejercicio profesional se ha consolidado en el litigio estratégico y la representación judicial en áreas de especial sensibilidad jurídica y humana, principalmente en seguridad social en pensiones, derecho laboral, derecho de familia y derecho administrativo.
+                        </p>
+                        <p class="text-gray-600 font-light text-sm leading-relaxed text-justify">
+                            Se distingue por su capacidad de análisis, resolución y gestión integral de casos. Asume cada caso con absoluta seriedad, cercanía y sentido humano, brindando una representación integral, transparente y eficaz.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</main>
+
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+        <!-- WA Button 1 -->
+        <a href="https://api.whatsapp.com/send?phone=+573197472358&text=Hola,%20Vengo%20de%20www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- WA Button 2 -->
+        <a href="https://api.whatsapp.com/send?phone=+573222438756&text=Hola%2C+vengo+de+www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer class="bg-midnight border-t border-gold/20 text-gray-400 py-10 text-sm text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <i class="fa-solid fa-scale-balanced text-gold text-2xl mb-4 opacity-50"></i>
+            <p class="mb-2">© 2026 CARDONA & FRANCO ABOGADOS CONSULTORES S.A.S. Todos los derechos reservados.</p>
+            <p class="text-xs opacity-70">
+                <a href="politica-privacidad.html" target="_blank" class="hover:text-gold transition-colors">Política de Tratamiento de Datos</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            const icon = menuBtn.querySelector('i');
+            if (!mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>

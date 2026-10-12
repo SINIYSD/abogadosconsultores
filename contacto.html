@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARDONA FRANCO ABOGADOS S.A.S. | Excelencia Estratégica</title>
+    <meta name="description" content="Firma jurídica de excelencia en Manizales. Acompañamiento jurídico de alta complejidad, derecho laboral, corporativo, civil y administrativo.">
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Montserrat (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Recursos/favicon">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN for architecture) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#002147',
+                        ivory: '#F8F9FA',
+                        gold: '#D4AF37',
+                        charcoal: '#333333',
+                        graylight: '#E5E7EB'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth scrolling and base resets */
+        html { scroll-behavior: smooth; }
+        body { background-color: #F8F9FA; color: #333333; overflow-x: hidden; }
+
+
+
+        /* Luxury accents and hover effects */
+        .gold-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #D4AF37;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+        .gold-underline:hover::after { width: 80px; }
+
+        .card-hover {
+            transition: all 0.4s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-bottom: 3px solid #D4AF37;
+        }
+
+        /* Nav links underline animation */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active-link::after { width: 100%; }
+
+        /* WhatsApp Blinking/Pulse Animation */
+        .wa-btn {
+            animation: pulse-gold 2s infinite;
+            transition: transform 0.3s ease;
+        }
+        .wa-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+
+
+        /* Architectural Parallax Backgrounds */
+        .bg-hero {
+            background-image: linear-gradient(to bottom, rgba(0,33,71,0.85), rgba(0,33,71,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-color: #F8F9FA;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="bg-midnight text-ivory sticky top-0 z-50 shadow-lg border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Desktop Layout: Grid 3 cols (Links Left, Logo Center, Button Right) -->
+            <div class="hidden lg:grid grid-cols-3 items-center h-24">
+                <!-- Left: Navigation -->
+                <nav class="flex space-x-8 text-sm font-medium tracking-wider uppercase">
+                    <a href="https://cardonafrancoabogados.com" class="nav-link text-gray-300 hover:text-white transition-colors">Inicio</a>
+                    <a href="https://cardonafrancoabogados.com/servicios" class="nav-link text-gray-300 hover:text-white transition-colors">Servicios</a>
+                    <a href="https://cardonafrancoabogados.com/nosotros" class="nav-link text-gray-300 hover:text-white transition-colors">Nosotros</a>
+                    <a href="https://cardonafrancoabogados.com/contacto" class="nav-link active-link text-white hover:text-white transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Center: Logo / Name -->
+                <a href="https://cardonafrancoabogados.com" class="text-center flex flex-col items-center justify-center cursor-pointer">
+                    <!-- Subtle abstract logo representation -->
+                    
+                    <h1 class="font-serif text-xl xl:text-2xl font-bold tracking-widest text-white leading-tight">
+                        CARDONA & FRANCO<br><span class="text-xs tracking-[0.2em] font-sans text-gold font-normal">ABOGADOS CONSULTORES S.A.S.</span>
+                    </h1>
+                </a>
+
+                <!-- Right: Contact Button -->
+                <div class="flex justify-end">
+                    <a href="https://cardonafrancoabogados.com/contacto"  class="bg-transparent border border-gold text-gold hover:bg-gold hover:text-midnight font-semibold py-2 px-6 rounded transition-all duration-300 text-sm uppercase tracking-wide">
+                        Agendar Cita
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="flex lg:hidden justify-between items-center h-20">
+                <a href="https://cardonafrancoabogados.com" class="flex flex-col items-start cursor-pointer">
+                    <h1 class="font-serif text-lg font-bold tracking-widest text-white leading-tight">
+                        CARDONA & FRANCO
+                    </h1>
+                    <span class="text-[10px] tracking-widest font-sans text-gold font-normal">ABOGADOS CONSULTORES S.A.S.</span>
+                </a>
+                <button id="mobile-menu-btn" class="text-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="lg:hidden hidden flex-col bg-midnight border-t border-gold/20 absolute w-full left-0 shadow-xl">
+            <a href="https://cardonafrancoabogados.com" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Inicio</a>
+            <a href="https://cardonafrancoabogados.com/servicios" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Servicios</a>
+            <a href="https://cardonafrancoabogados.com/nosotros" class="block py-4 px-6 text-sm font-medium text-white border-b border-white/5 uppercase tracking-wide">Nosotros</a>
+            <a href="https://cardonafrancoabogados.com/contacto" class="block py-4 px-6 text-sm font-medium text-gold border-b border-white/5 uppercase tracking-wide">Contacto</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+<section id="contacto" class="bg-ivory">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-4xl md:text-5xl text-midnight font-bold mb-4 gold-underline">Contacto</h2>
+                    <p class="text-gray-500 mt-6 font-light">Estamos a su disposición para brindarle el respaldo jurídico que merece.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    
+                    <!-- Contact Info -->
+                    <div class="bg-midnight text-ivory p-10 md:p-14 rounded-lg shadow-2xl relative overflow-hidden h-full">
+                        <div class="absolute -bottom-10 -right-10 opacity-10">
+                            <i class="fa-regular fa-compass text-[15rem]"></i>
+                        </div>
+                        <h3 class="font-serif text-3xl font-bold mb-8 text-gold">Visítenos</h3>
+                        
+                        <div class="space-y-8 relative z-10">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold mr-6 flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold tracking-wider text-sm mb-1 uppercase">Sede Principal</h5>
+                                    <p class="font-light text-gray-300">Calle 20 A número 21-30<br>Edificio Pasaje Pinzón, Oficina 601<br>Manizales, Caldas, Colombia.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold mr-6 flex-shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold tracking-wider text-sm mb-1 uppercase">Correo Electrónico</h5>
+                                    <p class="font-light text-gray-300">
+                                        <a href="mailto:cardonafrancoabogadosconsultor@gmail.com" class="hover:text-gold transition-colors">cardonafrancoabogadosconsultor@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold mr-6 flex-shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold tracking-wider text-sm mb-1 uppercase">Atención Telefónica</h5>
+                                    <p class="font-light text-gray-300">
+                                        +57 319 747 2358<br>
+                                        +57 322 243 8756
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-white p-10 md:p-14 rounded-lg shadow-lg border border-gray-100">
+                        <h3 class="font-serif text-2xl font-bold mb-8 text-midnight">Envíenos su consulta</h3>
+                        <form action="https://formsubmit.co/cardonafrancoabogadosconsultor@gmail.com" method="POST" class="space-y-4 bg-[#F0F2F5] p-8 rounded-lg shadow-inner">
+                            <input type="hidden" name="_subject" value="Nuevo contacto desde la web Cardona & Franco">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="true">
+
+                            <div>
+                                <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="text" name="Nombre Completo" placeholder="Nombre Completo*" required>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="email" name="Email" placeholder="Email*" required>
+                                </div>
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="tel" name="Teléfono" placeholder="Teléfono*" required>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="text" name="Ciudad" placeholder="Ciudad*" required>
+                                </div>
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="text" name="Empresa" placeholder="Empresa">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="text" name="NIT" placeholder="NIT">
+                                </div>
+                                <div>
+                                    <input class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm" type="text" name="Cargo" placeholder="Cargo">
+                                </div>
+                            </div>
+                            <div>
+                                <textarea class="w-full bg-white border border-gray-200 rounded py-3 px-4 focus:outline-none focus:ring-1 focus:ring-gold text-charcoal font-light text-sm resize-none h-32" name="Mensaje" placeholder="Mensaje"></textarea>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2 pt-2">
+                                <input type="checkbox" id="privacidad" name="privacidad" required class="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500 cursor-pointer">
+                                <label for="privacidad" class="text-sm text-gray-700 font-medium cursor-pointer">
+                                    He leído y acepto la <a href="politica-privacidad.html" target="_blank" class="text-blue-600 hover:underline">política de privacidad y tratamiento de datos.</a>
+                                </label>
+                            </div>
+                            
+                            <div class="pt-4 flex justify-center">
+                                <button type="submit" class="bg-midnight text-ivory font-bold py-3 px-12 rounded hover:bg-gold hover:text-midnight transition-colors duration-300 text-sm shadow-md uppercase tracking-wider">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</main>
+
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+        <!-- WA Button 1 -->
+        <a href="https://api.whatsapp.com/send?phone=+573197472358&text=Hola,%20Vengo%20de%20www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- WA Button 2 -->
+        <a href="https://api.whatsapp.com/send?phone=+573222438756&text=Hola%2C+vengo+de+www.cardonafrancoabogados.com" target="_blank" class="wa-btn bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg text-3xl">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer class="bg-midnight border-t border-gold/20 text-gray-400 py-10 text-sm text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <i class="fa-solid fa-scale-balanced text-gold text-2xl mb-4 opacity-50"></i>
+            <p class="mb-2">© 2026 CARDONA & FRANCO ABOGADOS CONSULTORES S.A.S. Todos los derechos reservados.</p>
+            <p class="text-xs opacity-70">
+                <a href="politica-privacidad.html" target="_blank" class="hover:text-gold transition-colors">Política de Tratamiento de Datos</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', toggleMenu);
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            const icon = menuBtn.querySelector('i');
+            if (!mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>

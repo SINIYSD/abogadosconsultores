@@ -43,8 +43,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: #F8F9FA; color: #333333; overflow-x: hidden; }
 
-
-
         /* Luxury accents and hover effects */
         .gold-underline {
             position: relative;
@@ -102,8 +100,6 @@
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
 
-
-
         /* Architectural Parallax Backgrounds */
         .bg-hero {
             background-image: linear-gradient(to bottom, rgba(0,33,71,0.85), rgba(0,33,71,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
@@ -121,7 +117,7 @@
 
     <header class="bg-midnight text-ivory sticky top-0 z-50 shadow-lg border-b border-gold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Desktop Layout: Grid 3 cols (Links Left, Logo Center, Button Right) -->
+            <!-- Desktop Layout -->
             <div class="hidden lg:grid grid-cols-3 items-center h-24">
                 <!-- Left: Navigation -->
                 <nav class="flex space-x-8 text-sm font-medium tracking-wider uppercase">
@@ -133,8 +129,6 @@
 
                 <!-- Center: Logo / Name -->
                 <a href="https://cardonafrancoabogados.com" class="text-center flex flex-col items-center justify-center cursor-pointer">
-                    <!-- Subtle abstract logo representation -->
-                    
                     <h1 class="font-serif text-xl xl:text-2xl font-bold tracking-widest text-white leading-tight">
                         CARDONA & FRANCO<br><span class="text-xs tracking-[0.2em] font-sans text-gold font-normal">ABOGADOS CONSULTORES S.A.S.</span>
                     </h1>
@@ -172,38 +166,37 @@
     </header>
 
     <main class="flex-grow">
-<section id="inicio" >
-            
+        <section id="inicio">
             <!-- Hero Section -->
             <div class="bg-hero min-h-[80vh] flex items-center relative">
                 <div class="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/90 to-transparent"></div>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
                     <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
-                    <div class="max-w-3xl">
-                        <span class="text-gold font-semibold tracking-widest uppercase text-sm mb-4 block">Firma Jurídica de Excelencia</span>
-                        <h2 class="font-serif text-4xl lg:text-5xl text-white font-bold leading-tight mb-6">
-                            CARDONA & FRANCO <br><span class="text-2xl md:text-3xl lg:text-4xl text-gray-200">ABOGADOS CONSULTORES S.A.S.</span>
-                        </h2>
-                        <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 border-l-4 border-gold pl-6">
-                            "Concebimos el ejercicio del derecho como una disciplina de absoluta precisión y excelencia estratégica. De ahí que, nuestra firma se erige sobre un rigor académico excepcional, brindando acompañamiento jurídico de alta complejidad para la protección patrimonial y empresarial en todo el territorio nacional. En donde, nuestro inquebrantable compromiso es ofrecer a cada cliente una representación legal caracterizada por la exclusividad, la ética probada y la consecución de resultados jurídicos contundentes."
-                        </p>
-                        <a href="https://cardonafrancoabogados.com/servicios" onclick="navigate('servicios')" class="inline-block bg-gold text-midnight font-bold py-3 px-8 rounded hover:bg-white transition-colors duration-300 uppercase tracking-wider text-sm shadow-lg">
-                            Descubrir Áreas de Práctica
-                        </a>
+                        <div class="max-w-3xl">
+                            <span class="text-gold font-semibold tracking-widest uppercase text-sm mb-4 block">Firma Jurídica de Excelencia</span>
+                            <h2 class="font-serif text-4xl lg:text-5xl text-white font-bold leading-tight mb-6">
+                                CARDONA & FRANCO <br><span class="text-2xl md:text-3xl lg:text-4xl text-gray-200">ABOGADOS CONSULTORES S.A.S.</span>
+                            </h2>
+                            <p class="text-gray-300 text-lg md:text-xl font-light leading-relaxed mb-10 border-l-4 border-gold pl-6">
+                                "Concebimos el ejercicio del derecho como una disciplina de absoluta precisión y excelencia estratégica. De ahí que, nuestra firma se erige sobre un rigor académico excepcional, brindando acompañamiento jurídico de alta complejidad para la protección patrimonial y empresarial en todo el territorio nacional. En donde, nuestro inquebrantable compromiso es ofrecer a cada cliente una representación legal caracterizada por la exclusividad, la ética probada."
+                            </p>
+                            <a href="https://cardonafrancoabogados.com/servicios" onclick="navigate('servicios')" class="inline-block bg-gold text-midnight font-bold py-3 px-8 rounded hover:bg-white transition-colors duration-300 uppercase tracking-wider text-sm shadow-lg">
+                                Descubrir Áreas de Práctica
+                            </a>
+                        </div>
+                        <div class="hidden lg:flex justify-center items-center pl-8">
+                            <img src="Recursos/logoimg.png" alt="Escudo Cardona & Franco" class="max-w-[320px] w-full object-contain drop-shadow-2xl rounded-2xl">
+                        </div>
                     </div>
-                    <div class="hidden lg:flex justify-center items-center pl-8">
-                        <img src="Recursos/logoimg.png" alt="Escudo Cardona & Franco" class="max-w-[320px] w-full object-contain drop-shadow-2xl rounded-2xl">
-                    </div>
-                </div>
                 </div>
             </div>
 
-            <!-- Quiénes Somos (Brief) -->
+            <!-- Quiénes Somos -->
             <div class="py-20 bg-ivory">
                 <div class="max-w-4xl mx-auto px-4 text-center">
                     <h3 class="font-serif text-3xl md:text-4xl text-midnight font-bold mb-6 gold-underline">Quiénes Somos</h3>
                     <p class="text-gray-600 mt-8 text-lg leading-relaxed font-light">
-                        Cardona Franco Abogados S.A.S. se consolida como una firma jurídica nacida en la ciudad de Manizales Caldas, para redefinir el estándar de la defensa legal mediante una visión institucional implacable; la cual, asume cada desafío corporativo y litigioso con una disciplina rigurosa que prioriza la emoción y los resultados de sus representados.
+                        Cardona Franco Abogados Consultores S.A.S. se consolida como una firma jurídica nacida en la ciudad de Manizales Caldas, para redefinir el estándar de la defensa legal mediante una visión institucional implacable; la cual, asume cada desafío corporativo y litigioso con una disciplina rigurosa que prioriza la emoción y los resultados de sus representados.
                         Igualmente, la estructura técnica de la firma se cimenta sobre una sólida trayectoria en el análisis procesal y el conocimiento profundo de la maquinaria judicial.
                     </p>
                 </div>
@@ -214,7 +207,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
                         <h3 class="font-serif text-3xl md:text-4xl text-midnight font-bold mb-4 gold-underline">Áreas de Práctica</h3>
-                        <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light">La estrategia jurídica que transforma conflictos complejos en soluciones definitivas.</p>
+                        <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light">Representación en controversias legales con análisis probatorio y acompañamiento detallado en cada etapa.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -224,7 +217,7 @@
                                 <i class="fa-solid fa-building text-xl"></i>
                             </div>
                             <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho Corporativo y de Negocios</h4>
-                            <p class="text-gray-600 font-light text-sm flex-grow">La experiencia que transforma riesgos corporativos en oportunidades de crecimiento seguro.</p>
+                            <p class="text-gray-600 font-light text-sm flex-grow">Asesoramos a empresas en la identificación y gestión de riesgos contractuales, societarios y laborales, a efectos de mitigar eventuales disputas judiciales</p>
                         </div>
                         <!-- Card 2 -->
                         <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
@@ -240,7 +233,7 @@
                                 <i class="fa-solid fa-gavel text-xl"></i>
                             </div>
                             <h4 class="font-serif text-xl font-bold text-midnight mb-4">Derecho Litigioso y Controversias</h4>
-                            <p class="text-gray-600 font-light text-sm flex-grow">La estrategia procesal que convierte la disputa en resultados favorables.</p>
+                            <p class="text-gray-600 font-light text-sm flex-grow">Diseñamos la estrategia de cada caso a partir de las pruebas disponibles y le explicamos cada etapa. El desenlace depende de las pruebas practicadas en el proceso y de las decisiones judiciales</p>
                         </div>
                         <!-- Card 4 -->
                         <div class="bg-ivory p-8 rounded-lg shadow-sm border border-gray-100 card-hover flex flex-col items-start">
@@ -297,7 +290,7 @@
                 </div>
             </div>
         </section>
-</main>
+    </main>
 
     <div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
         <!-- WA Button 1 -->
